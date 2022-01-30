@@ -1,0 +1,114 @@
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 22;
+    grid-row-start: 5;
+    grid-row-end: 20;
+    text-align: center;
+}
+
+table td,
+table th {
+    border: 1px solid rgb(209, 207, 207);
+    padding: 8px;
+    font-size: 28px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+table th,
+tfoot td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #9c69a3;
+    color: white;
+}
+
+#GhibliFilmGlobalFilter-span {
+    /* grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 3;
+    grid-row-end: 3; */
+    font-size: 40px;
+    color: #9c69a3;
+}
+
+#GhibliFilmGlobalFilter-inputTextBox {
+    font-size: 40px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+#GhibliFilmTablePagination-div {
+    grid-column-start: 11;
+    grid-column-end: 28;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    font-size: 25px;
+    color: #9c69a3;
+}
+
+button,
+#GhibliFilmTable-Selector {
+    font-size: 25px;
+    color: white;
+    background-color: #9c69a3;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#GhibliFilmGlobalFilter-span {
+    grid-column-start: 2;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+
+#ghibliFilm-container {
+    position: relative;
+    left: 88rem;
+    top: 18rem;
+    border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        grid-column-start: 2;
+        grid-column-end: 15;
+        grid-row-start: 5;
+        grid-row-end: 20;
+        text-align: center;
+    }
+    #GhibliFilmTablePagination-div {
+        grid-column-start: 4;
+        grid-column-end: 15;
+        grid-row-start: 4;
+        grid-row-end: 4;
+        font-size: 25px;
+        color: #9c69a3;
+    }
+    #GhibliFilmGlobalFilter-span {
+        grid-column-start: 4;
+        grid-column-end: 15;
+        grid-row-start: 3;
+        grid-row-end: 3;
+    }
+    #ghibliFilm-container {
+        position: relative;
+        left: 14rem;
+        top: 18rem;
+    }
+}
