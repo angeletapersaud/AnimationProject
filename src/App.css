@@ -319,6 +319,7 @@ input:hover {
     display: flex;
     justify-content: center;
     padding-top: 4rem;
+    color: white;
 }
 
 .form-label {
@@ -391,7 +392,7 @@ input:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 100px;
+    padding: 90px;
     position: relative;
     left: 44rem;
     top: 17rem;
@@ -402,7 +403,7 @@ input:hover {
     margin-top: 50px;
     width: 180px;
     padding: 0.8rem;
-    margin-left: 5rem;
+    margin-left: 6rem;
 }
 
 #ghibliFilm-title {

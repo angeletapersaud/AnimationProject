@@ -88,6 +88,11 @@ button,
     top: -0.5rem;
 }
 
+#ghibliFilm-title {
+    position: relative;
+    right: 1rem;
+}
+
 @media (max-width: 1024px) {
     #StudioGhibliFilm-table {
         font-family: Arial, Helvetica, sans-serif;
@@ -115,7 +120,7 @@ button,
     }
     #ghibliFilm-container {
         position: relative;
-        left: 38rem;
+        left: 35rem;
         top: 18rem;
     }
     #StudioGhibliFilm-div {
@@ -126,7 +131,9 @@ button,
         text-align: center;
     }
     #ghibliFilm-movie-banner {
-        width: 250px;
+        width: 300px;
+        position: relative;
+        left: 0em;
     }
     #ghibliFilm-title {
         position: relative;
