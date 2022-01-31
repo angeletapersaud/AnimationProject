@@ -35,6 +35,14 @@ button:hover {
     transform: scale(1.1);
 }
 
+tr {
+    transition: transform 0.5s;
+}
+
+tr:hover {
+    transform: scale(1.04);
+}
+
 img {
     transition: transform 0.5s;
 }

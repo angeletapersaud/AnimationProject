@@ -42,14 +42,16 @@ const StudioGhibliSearch = () => {
     }
   }
 
-  //GET api to fetch on json object by id
-  async function doFetchOne(id) {
+  //filter list to find the clicked row.
+  async function filterClickedRow(id) {
     try {
-      let replyJson = await axios(
-        "https://ghibliapi.herokuapp.com/films/" + id
-      );
+      // let replyJson = await axios(
+      //   "https://ghibliapi.herokuapp.com/films/" + id
+      // );
       setIsLoaded(true);
-      setghibliFilm(replyJson.data);
+      let matchingRow = ghibliFilmList.filter(c=> c.id === id)[0];
+      setghibliFilm(matchingRow);
+      //setghibliFilm(replyJson.data);
     } catch (error) {
       setIsLoaded(true);
       setError(error);
@@ -64,7 +66,7 @@ const StudioGhibliSearch = () => {
     if (previousAnimeID === row[0].value) {
       additionalDetailsEle.hidden = !additionalDetailsEle.hidden;
     } else {
-      doFetchOne(row[0].value);
+      filterClickedRow(row[0].value);
       additionalDetailsEle.hidden = false;
       setpreviousAnimeID(row[0].value);
     }
@@ -203,7 +205,7 @@ const StudioGhibliSearch = () => {
         </div>
         <div id="StudioGhibliFilm-div">
           {<StudioGhibliFilm ghibliFilm={ghibliFilm} />}
-        </div>
+        </div>    
       </>
     );
   }
