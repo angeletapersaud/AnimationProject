@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React from "react";
 
- const GhibliFilmGlobalFilter = ({ filter, setFilter }) => {
+//pass in filter box input and use the destructered setFilter function to rerender the table
+const GhibliFilmGlobalFilter = ({ filter, setFilter }) => {
   return (
-    <span id = 'GhibliFilmGlobalFilter-span'>
-      Filter:{' '}
-      <input id='GhibliFilmGlobalFilter-inputTextBox' value = {filter || ''}
-          onChange ={e=>setFilter(e.target.value)}/>
+    <span id="GhibliFilmGlobalFilter-span">
+      Filter:{" "}
+      <input
+        id="GhibliFilmGlobalFilter-inputTextBox"
+        value={filter || ""}
+        onChange={(e) => setFilter(e.target.value)}
+      />
     </span>
-  )
-}
-export default GhibliFilmGlobalFilter
+  );
+};
+export default GhibliFilmGlobalFilter;

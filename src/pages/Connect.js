@@ -1,9 +1,8 @@
-import React, { useState,useContext } from "react";
-import NoFace from "../images/NoFace.jpg";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {CounterContext} from '../App'
 
 function Connect() {
+  //states
   let [firstname, setFirstname] = useState("");
   let [lastname, setLastname] = useState("");
   let [email, setEmail] = useState("");
@@ -13,9 +12,9 @@ function Connect() {
   let [reenterpassword, setReenterpassword] = useState("");
   let [submitted, setSubmitted] = useState(false);
 
+//handle any change to input boxes
   const handleChange = (event) => {
     if (event.target.id === "firstname") {
-      // this.setState({ username: event.target.value })
       setFirstname(event.target.value);
     } else if (event.target.id === "lastname") {
       setLastname(event.target.value);
@@ -30,18 +29,12 @@ function Connect() {
     } else {
       setReenterpassword(event.target.value);
     }
-
-    // Computed property names
-
-    //this.setState({ [event.target.id]: event.target.value })
   };
 
+  //handle submit
   const handleSubmit = (event) => {
-    ///    onClick ... onChange ... onSubmit
     event.preventDefault();
-
     setSubmitted((prevSubmitted) => true);
-    // console.log(username,password,email,submitted)
   };
 
   return (

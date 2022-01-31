@@ -442,7 +442,6 @@ input:hover {
         grid-row-end: 1;
     }
     .section-top {
-        /* overflow-y: hidden; */
         width: 1024px;
         height: 1296px;
         background-image: url(./images/MediaScreenImages/FromUpOnPoppyHill.jpg);

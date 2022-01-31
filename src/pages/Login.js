@@ -1,48 +1,56 @@
-import React, { useState,useContext } from "react";
-import { Link } from "react-router-dom";
-import {UserContext} from '../App'
+import React, { useState, useContext } from "react";
+
+import { UserContext } from "../App";
 
 function Login() {
   let [usernameLogin, setUsernameLogin] = useState("");
   let [passwordLogin, setPasswordLogin] = useState("");
   let [submittedLogin, setSubmittedLogin] = useState(false);
 
-  const userContext = useContext(UserContext)
+  const userContext = useContext(UserContext);
   const handleChangeLogin = (event) => {
     if (event.target.id === "usernameLogin") {
       setUsernameLogin(event.target.value);
-    } else{
+    } else {
       setPasswordLogin(event.target.value);
     }
   };
 
+   //handle logout by calling dispatch with action type Loggin In
   const handleSubmitLogin = (event) => {
     event.preventDefault();
-    userContext.userDispatch({type:'Logged In',usernameLogin})
+    userContext.userDispatch({ type: "Logged In", usernameLogin });
+    setUsernameLogin('');
+    setPasswordLogin('');
     setSubmittedLogin((prevSubmitted) => true);
-    document.getElementById('formcontainer').hidden = true;
-    document.getElementById('signoutBtn').hidden = false;
+    document.getElementById("signoutBtn").hidden = false;
   };
 
-  function handleSubmitLogout(){
-    userContext.userDispatch({type:'Logged Out'})
-    document.getElementById('signoutBtn').hidden = true;
+  //handle logout by calling dispatch  with action type Logged Out
+  function handleSubmitLogout() {
+    userContext.userDispatch({ type: "Logged Out" });
+    document.getElementById("signoutBtn").hidden = true;
   }
 
   return (
     <div id="ConnectPgContainer">
-    <div id='signoutBtnDiv'>
-          <button hidden id="signoutBtn" onClick={()=> handleSubmitLogout()}>Logout!</button>
+      <div id="signoutBtnDiv">
+        <button hidden id="signoutBtn" onClick={() => handleSubmitLogout()}>
+          Logout!
+        </button>
       </div>
-      <div id="Login-Page" hidden = {false}>
-        <div id="formcontainer" >
-          {/*  */}
-          <form onSubmit={handleSubmitLogin} >
-            <h2 id='logintitle'>LOGIN</h2>
+      <div id="Login-Page" hidden={false}>
+        <div id="formcontainer">
+          <form onSubmit={handleSubmitLogin}>
+            <h2 id="logintitle">LOGIN</h2>
             <label className="form-label" htmlFor="usernameSignIn">
               Username:
             </label>
-            <input id="usernameLogin" onChange={handleChangeLogin} value={usernameLogin} />
+            <input
+              id="usernameLogin"
+              onChange={handleChangeLogin}
+              value={usernameLogin}
+            />
 
             <label className="form-label" htmlFor="passwordSignIn">
               Password:
@@ -55,11 +63,9 @@ function Login() {
               type="password"
             />
             <div>
-                <button id="signinBtn">Login!</button>
+              <button id="signinBtn">Login!</button>
             </div>
           </form>
-         
-          {/*  */}
         </div>
       </div>
     </div>

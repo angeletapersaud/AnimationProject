@@ -38,7 +38,6 @@ tfoot td {
     grid-column-end: 18;
     grid-row-start: 3;
     grid-row-end: 3;
-    /* position: relative; */
 }
 
 #AnimeSearch-div {
@@ -70,14 +69,6 @@ tfoot td {
     border-radius: 10px;
 }
 
-
-/* button {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-} */
-
 button,
 #AnimeTable-Selector {
     font-size: 25px;
@@ -86,13 +77,6 @@ button,
     padding: 5px;
     border-radius: 5px;
     margin: 5px;
-}
-
-#AnimeGlobalFilter-span {
-    /* grid-column-start: 2;
-    grid-column-end: 28;
-    grid-row-start: 2;
-    grid-row-end: 2; */
 }
 
 @media (max-width: 1024px) {
@@ -134,9 +118,6 @@ button,
         position: relative;
         right: 2.4rem;
         top: 1rem;
-        /* margin-top: 1rem;
-        margin-right: 2re; */
-        /* position: relative; */
     }
     #AnimeSearch-div {
         grid-column-start: 4;

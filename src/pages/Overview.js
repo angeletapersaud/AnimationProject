@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 
 const Overview = () => {
-
   return (
     <>
-      <div className="section-top"/>
-      {/* <h1 id='Project-title'>ANIMATION</h1> */}
+      <div className="section-top" />
     </>
   );
 };

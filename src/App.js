@@ -10,37 +10,37 @@ import Connect from "./pages/Connect";
 import ThankYouPage from "./pages/ThankYouPage";
 import Overview from "./pages/Overview";
 import Login from "./pages/Login";
-import React, { useReducer,useState } from "react";
+import React, { useReducer} from "react";
 
 export const UserContext = React.createContext();
 
-const initialState = 'Is Not Logged in';
-
+//define reducer function to be consumed on child class
 const reducer = (state, action) => {
   switch (action.type) {
     case "Logged Out":
-      return{
-        ...state, user: 'Logged Out'
-    }
+      return {
+        ...state,
+        user: "Logged Out",
+      };
     case "Logged In":
-      // console.log(action);
-      // console.log('action.payLoad ', action.usernameLogin);
-      return{
-          ...state, user: 'Logged in as: ' + action.usernameLogin  
-      }
+      return {
+        ...state,
+        user: "Logged in as: " + action.usernameLogin,
+      };
     default:
       return state;
   }
 };
 
+//define routes
 function App() {
-  const [{user}, dispatch] = useReducer(reducer, {user : "Log in"});
+  const [{ user }, dispatch] = useReducer(reducer, { user: "Log in" });
   return (
     <UserContext.Provider value={{ userState: user, userDispatch: dispatch }}>
       <div className="App">
         <div id="main-div">
           <div id="UserID-div">{user}</div>
-          <h1 id='Project-title'>ANIMATION</h1>
+          <h1 id="Project-title">ANIMATION</h1>
           <Router>
             <Sidebar />
             <Routes>

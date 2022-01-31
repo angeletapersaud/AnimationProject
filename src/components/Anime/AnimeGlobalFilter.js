@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React from "react";
 
- const AnimeGlobalFilter = ({ filter, setFilter }) => {
+//pass in filter box input and use the destructered setFilter function to rerender the table
+const AnimeGlobalFilter = ({ filter, setFilter }) => {
   return (
-   <div id='AnimeSearchBoxes'>
-      <span id = 'AnimeGlobalFilter-span'>
-      Filter:{' '}
-      {/* <div id='AnimeSearchInputBoxes'> */}
-      <input id='AnimeGlobalFilter-inputTextBox' value = {filter || ''}
-          onChange ={e=>setFilter(e.target.value)}/>
-      {/* </div> */}
-    </span>
-   </div>
-  )
-}
-export default AnimeGlobalFilter
+    <div id="AnimeSearchBoxes">
+      <span id="AnimeGlobalFilter-span">
+        Filter:{" "}
+        <input
+          id="AnimeGlobalFilter-inputTextBox"
+          value={filter || ""}
+          onChange={(e) => setFilter(e.target.value)}
+        />
+      </span>
+    </div>
+  );
+};
+export default AnimeGlobalFilter;
