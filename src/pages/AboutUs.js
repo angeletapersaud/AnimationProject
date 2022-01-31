@@ -7,7 +7,7 @@ function AboutUs() {
     <div>
       <div id="AboutPg">
         <div id="AboutUsTitle">
-          <h1>About us...</h1>
+          <h1>Hover for details...</h1>
         </div>
         <div className="AboutUsContainer">
           <div className="card">

@@ -34,14 +34,24 @@ function AnimeNewsSearch() {
     //GET api to fetch the table data 
   async function doFetchAll() {
     try {
-      console.log("https://api.jikan.moe/v4/anime?page=" + nextAnimePage);
+      console.log("https://api.jikan.moe/v4/anime?page=" + nextAnimePage);    
       let replyJson = await axios(
-        "https://api.jikan.moe/v4/anime?page=" + nextAnimePage
-      );
+        "https://api.jikan.moe/v4/anime?page=" + nextAnimePage);
       console.log("reply: ", replyJson);
       setIsLoaded(true);
       setAnimeList(replyJson.data.data);
+      // setAnimeList(prevList => {
+      //   return [
+      //     ...prevList,
+      //     replyJson.data.data
+      //   ]
+      // })
       setLastPage(replyJson.data.pagination.last_visible_page);
+      
+      // for(let i=0;i<replyJson.data.data.length -1;i++){
+      //   fullanimeList.push(replyJson.data.data[i]);
+      // }
+      // setFullAnimeList(prevList=>prevList)
       console.log("animeList:", animeList);
       const additionalDetailsEle = document.getElementById("Anime-div");
       if (additionalDetailsEle != null) {
@@ -76,17 +86,22 @@ function AnimeNewsSearch() {
 
   //override nextpage functionality to account for only 25 rows returned at a time
   function nextPageOverride() {
-    if (!canNextPage) {
-      setAnimeNextPage((nextAnimePage) => nextAnimePage + 1);
-      doFetchAll();
-    }
+    // if (!canNextPage) {
+    //   setAnimeNextPage((nextAnimePage) => nextAnimePage + 1);
+    //   doFetchAll();
+    // }
     nextPage();
-    setPageTracker((setPageTracker) => setPageTracker + 1);
+    // setPageTracker((setPageTracker) => setPageTracker + 1);
   }
 
   function previousPageOverride() {
+    // setAnimeNextPage((nextAnimePage) => nextAnimePage -1);
+    // if (!canPreviousPage) {
+    //   setAnimeNextPage((nextAnimePage) => nextAnimePage - 1);
+    //   doFetchAll();
+    // }
     previousPage();
-    setPageTracker((setPageTracker) => setPageTracker - 1);
+    // setPageTracker((setPageTracker) => setPageTracker - 1);
   }
 
     //set the column headers and data source
@@ -185,15 +200,15 @@ function AnimeNewsSearch() {
             {"<<"}
           </button>{" "}
           <span>
-            Page{" "}
+            {/* Page{" "} */}
             <strong>
-              {PageTracker} of {lastPage - pageOptions.length}
+              {/* {PageTracker} of {lastPage - pageOptions.length} */}
             </strong>{" "}
           </span>
           <button
             id="AnimeTablePaginationPrev-button"
             onClick={() => previousPageOverride()}
-            disabled={!canPreviousPage}
+            // disabled={!canPreviousPage}
           >
             Previous
           </button>

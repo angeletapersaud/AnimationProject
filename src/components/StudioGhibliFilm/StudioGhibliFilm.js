@@ -3,7 +3,7 @@ import React from "react";
 //pass down the api object as props and display additional data
 function StudioGhibliFilm(props) {
   return (
-    <div id="ghibliFilm-container">
+    <div id="ghibliFilm-container" >
       <div id="ghibliFilm-div">
         <h3 id="ghibliFilm-title">Title: {props.ghibliFilm.title}</h3>
         <h3 id="ghibliFilm-director">Director: {props.ghibliFilm.director}</h3>

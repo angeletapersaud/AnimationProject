@@ -7,6 +7,7 @@ The purpose of this project is to provide animation related information to users
 ### API's used in this project:
 * Studio Gibli API 
 * Jikan API 
+* Google Fonts
 
 
 ## Target End User:

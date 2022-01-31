@@ -45,10 +45,12 @@ tfoot td {
     font-size: 40px;
     height: 60px;
     border-radius: 10px;
+    color: #9c69a3;
+    padding: 1rem;
 }
 
 #GhibliFilmTablePagination-div {
-    grid-column-start: 11;
+    grid-column-start: 12;
     grid-column-end: 28;
     grid-row-start: 3;
     grid-row-end: 3;
@@ -80,13 +82,19 @@ button,
     border-radius: 10px;
 }
 
+#StudioGhibliFilm-div {
+    position: fixed;
+    left: 4rem;
+    top: -0.5rem;
+}
+
 @media (max-width: 1024px) {
-    table {
+    #StudioGhibliFilm-table {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
         width: 100%;
-        grid-column-start: 2;
-        grid-column-end: 15;
+        grid-column-start: 1;
+        grid-column-end: 7;
         grid-row-start: 5;
         grid-row-end: 20;
         text-align: center;
@@ -107,7 +115,25 @@ button,
     }
     #ghibliFilm-container {
         position: relative;
-        left: 14rem;
+        left: 38rem;
         top: 18rem;
+    }
+    #StudioGhibliFilm-div {
+        position: fixed;
+    }
+    #ghibliFilm-div {
+        width: 300px;
+        text-align: center;
+    }
+    #ghibliFilm-movie-banner {
+        width: 250px;
+    }
+    #ghibliFilm-title {
+        position: relative;
+        right: 5rem;
+    }
+    #ghibliFilm-director {
+        position: relative;
+        right: 4rem;
     }
 }

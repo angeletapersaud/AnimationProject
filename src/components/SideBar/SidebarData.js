@@ -53,6 +53,6 @@ export const SidebarData = [
   {
     title: "Login",
     path: "/login",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <IoIcons.IoIosKey />,
   },
-];
+]

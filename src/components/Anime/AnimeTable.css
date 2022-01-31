@@ -35,7 +35,7 @@ tfoot td {
 
 #AnimeSearchBoxes {
     grid-column-start: 11;
-    grid-column-end: 18;
+    grid-column-end: 19;
     grid-row-start: 3;
     grid-row-end: 3;
 }
@@ -67,6 +67,8 @@ tfoot td {
     font-size: 30px;
     height: 60px;
     border-radius: 10px;
+    color: #9c69a3;
+    padding: 1rem;
 }
 
 button,
