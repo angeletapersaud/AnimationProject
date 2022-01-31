@@ -2,10 +2,6 @@ table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    grid-column-start: 2;
-    grid-column-end: 22;
-    grid-row-start: 5;
-    grid-row-end: 20;
     text-align: center;
 }
 
@@ -33,11 +29,14 @@ tfoot td {
     color: white;
 }
 
+#StudioGhibliFilm-table {
+    grid-column-start: 2;
+    grid-column-end: 22;
+    grid-row-start: 5;
+    grid-row-end: 20;
+}
+
 #GhibliFilmGlobalFilter-span {
-    /* grid-column-start: 1;
-    grid-column-end: 11;
-    grid-row-start: 3;
-    grid-row-end: 3; */
     font-size: 40px;
     color: #9c69a3;
 }

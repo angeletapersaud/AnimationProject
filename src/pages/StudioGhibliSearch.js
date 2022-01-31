@@ -94,7 +94,7 @@ const StudioGhibliSearch = () => {
       return (
         <>
 <GhibliFilmGlobalFilter filter ={globalFilter} setFilter={setGlobalFilter}/>
-<table {...getTableProps()}>
+<table {...getTableProps()} id='StudioGhibliFilm-table'>
             <thead>
             {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>

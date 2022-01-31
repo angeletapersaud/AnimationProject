@@ -8,6 +8,7 @@
 .App {
     background: #936aa3;
     height: 70px;
+    width: 100vw;
 }
 
 #main-div {
@@ -407,7 +408,7 @@ input:hover {
 }
 
 #ghibliFilm-release-date {
-    background-color: #9c69a3;
+    background-color: #936aa3;
     padding: 0.4rem;
     padding-left: 0.4rem;
 }
@@ -415,6 +416,15 @@ input:hover {
 #ghibliFilm-release-description {
     padding: 0.4rem;
     padding-left: 0.4rem;
+}
+
+#ghibliFilm-movie-banner {
+    height: 209px;
+    width: 450px;
+    position: relative;
+    left: 1.5rem;
+    top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 
