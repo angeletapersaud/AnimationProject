@@ -282,7 +282,7 @@ input:hover {
 }
 
 
-/* Styling for form */
+/* Styling for forms */
 
 #ConnectPgContainer {
     overflow-x: hidden;
@@ -325,7 +325,7 @@ input:hover {
     backdrop-filter: blur(30px);
     background-color: rgba(255, 255, 255, 0.1);
     position: relative;
-    top: 4rem;
+    top: 9rem;
     left: 15rem;
     display: flex;
     justify-content: center;
