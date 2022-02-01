@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AnimationProject/static/css/main.0bbc7366.css",
+    "main.css": "/AnimationProject/static/css/main.22281098.css",
     "main.js": "/AnimationProject/static/js/main.afd42433.js",
     "static/media/PrincessMononoke2.jpg": "/AnimationProject/static/media/PrincessMononoke2.310a7e006af1dff921b1.jpg",
     "static/media/CastleInTheSky2.png": "/AnimationProject/static/media/CastleInTheSky2.9a12ad9ff3eaff164205.png",
@@ -23,11 +23,11 @@
     "static/media/MQ-HowlsMovingCastle.jpg": "/AnimationProject/static/media/MQ-HowlsMovingCastle.17f59957e0da6163d563.jpg",
     "static/media/MQ-SpiritedAway.jpg": "/AnimationProject/static/media/MQ-SpiritedAway.cdd1c72718ee20396c48.jpg",
     "index.html": "/AnimationProject/index.html",
-    "main.0bbc7366.css.map": "/AnimationProject/static/css/main.0bbc7366.css.map",
+    "main.22281098.css.map": "/AnimationProject/static/css/main.22281098.css.map",
     "main.afd42433.js.map": "/AnimationProject/static/js/main.afd42433.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bbc7366.css",
+    "static/css/main.22281098.css",
     "static/js/main.afd42433.js"
   ]
 }
