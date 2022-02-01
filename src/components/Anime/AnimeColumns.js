@@ -1,5 +1,4 @@
 import { format } from "date-fns";
-
 //define Anime column header data and api keys to associate it with
 export const COLUMNS = [
   {
@@ -27,7 +26,7 @@ export const COLUMNS = [
     Header: "Year",
     accessor: "year",
     Cell: ({ value }) => {
-      return format(new Date(value), "yyyy");
+      return value;
     },
   },
 ];

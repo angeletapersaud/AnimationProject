@@ -16,12 +16,12 @@ function Login() {
     }
   };
 
-   //handle logout by calling dispatch with action type Loggin In
+  //handle logout by calling dispatch with action type Loggin In
   const handleSubmitLogin = (event) => {
     event.preventDefault();
     userContext.userDispatch({ type: "Logged In", usernameLogin });
-    setUsernameLogin('');
-    setPasswordLogin('');
+    setUsernameLogin("");
+    setPasswordLogin("");
     setSubmittedLogin((prevSubmitted) => true);
     document.getElementById("signoutBtn").hidden = false;
   };
@@ -33,15 +33,15 @@ function Login() {
   }
 
   return (
-    <div id="ConnectPgContainer">
+    <div id="LoginPgContainer">
       <div id="signoutBtnDiv">
         <button hidden id="signoutBtn" onClick={() => handleSubmitLogout()}>
           Logout!
         </button>
       </div>
       <div id="Login-Page" hidden={false}>
-        <div id="formcontainer">
-          <form onSubmit={handleSubmitLogin}>
+        <div id="formcontainer-Login">
+          <form id="LoginForm" onSubmit={handleSubmitLogin}>
             <h2 id="logintitle">LOGIN</h2>
             <label className="form-label" htmlFor="usernameSignIn">
               Username:
