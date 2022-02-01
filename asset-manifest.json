@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/AnimationProject/static/css/main.9fce169c.css",
-    "main.js": "/AnimationProject/static/js/main.6c4974fe.js",
+    "main.css": "/AnimationProject/static/css/main.0bbc7366.css",
+    "main.js": "/AnimationProject/static/js/main.afd42433.js",
     "static/media/PrincessMononoke2.jpg": "/AnimationProject/static/media/PrincessMononoke2.310a7e006af1dff921b1.jpg",
     "static/media/CastleInTheSky2.png": "/AnimationProject/static/media/CastleInTheSky2.9a12ad9ff3eaff164205.png",
     "static/media/PonyoGIF.gif": "/AnimationProject/static/media/PonyoGIF.ec1ea15e80c387939793.gif",
     "static/media/MyNeighborTotoroGIF.gif": "/AnimationProject/static/media/MyNeighborTotoroGIF.5f458097cc907dab8e07.gif",
     "static/media/KikisDeliveryService.gif": "/AnimationProject/static/media/KikisDeliveryService.eeb55b04e3756b323ace.gif",
+    "static/media/CastleInTheSkyLogin.jpg": "/AnimationProject/static/media/CastleInTheSkyLogin.a48023e22bc95f60f247.jpg",
     "static/media/NoFace.jpg": "/AnimationProject/static/media/NoFace.79801c1e703e1eacba78.jpg",
     "static/media/SpiritedAwayGIF.gif": "/AnimationProject/static/media/SpiritedAwayGIF.79993d61e33822886179.gif",
     "static/media/MyNeighborTotoro2.jpg": "/AnimationProject/static/media/MyNeighborTotoro2.01ba3a7d579488f43292.jpg",
@@ -15,18 +16,18 @@
     "static/media/SpiritedAway.jpg": "/AnimationProject/static/media/SpiritedAway.e35e3f8ec0981efb603b.jpg",
     "static/media/ThankYouPageImage.jpg": "/AnimationProject/static/media/ThankYouPageImage.4a8bd75057215ba76b00.jpg",
     "static/media/HowlsMovingCastle.jpg": "/AnimationProject/static/media/HowlsMovingCastle.83a251db046d3a519d18.jpg",
-    "static/media/MQ-LOGINIMG-.jpg": "/AnimationProject/static/media/MQ-LOGINIMG-.676e9171f994f4aeb355.jpg",
     "static/media/MQ-CastleInTheSky.jpg": "/AnimationProject/static/media/MQ-CastleInTheSky.09d6daf2b51a808d739a.jpg",
     "static/media/MQ-MyNeighbor-Totoro2.jpg": "/AnimationProject/static/media/MQ-MyNeighbor-Totoro2.9b882510a1fa4760bff8.jpg",
+    "static/media/MQ-ConnectPgImg.jpg": "/AnimationProject/static/media/MQ-ConnectPgImg.7833db3d60c6394d2d25.jpg",
     "static/media/MQ-PrincessMononoke2.jpg": "/AnimationProject/static/media/MQ-PrincessMononoke2.8ab422f4021c7c95a832.jpg",
     "static/media/MQ-HowlsMovingCastle.jpg": "/AnimationProject/static/media/MQ-HowlsMovingCastle.17f59957e0da6163d563.jpg",
     "static/media/MQ-SpiritedAway.jpg": "/AnimationProject/static/media/MQ-SpiritedAway.cdd1c72718ee20396c48.jpg",
     "index.html": "/AnimationProject/index.html",
-    "main.9fce169c.css.map": "/AnimationProject/static/css/main.9fce169c.css.map",
-    "main.6c4974fe.js.map": "/AnimationProject/static/js/main.6c4974fe.js.map"
+    "main.0bbc7366.css.map": "/AnimationProject/static/css/main.0bbc7366.css.map",
+    "main.afd42433.js.map": "/AnimationProject/static/js/main.afd42433.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fce169c.css",
-    "static/js/main.6c4974fe.js"
+    "static/css/main.0bbc7366.css",
+    "static/js/main.afd42433.js"
   ]
 }
