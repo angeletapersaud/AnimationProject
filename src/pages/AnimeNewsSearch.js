@@ -26,6 +26,8 @@ function AnimeNewsSearch() {
   let [lastPage, setLastPage] = useState(0);
   let [PageTracker, setPageTracker] = useState(1);
 
+
+  //console.clear();
     //useEffect will rerender the component everytime any state updates
   useEffect(() => {
     doFetchAll();
@@ -35,28 +37,12 @@ function AnimeNewsSearch() {
   async function doFetchAll() {
     try {
       console.log("https://api.jikan.moe/v4/anime?page=" + nextAnimePage);    
-      let replyJson = await axios(
-        "https://api.jikan.moe/v4/anime?page=" + nextAnimePage);
+    let replyJson = await axios(
+      "https://api.jikan.moe/v4/anime?page=" + nextAnimePage);
       console.log("reply: ", replyJson);
       setIsLoaded(true);
       setAnimeList(replyJson.data.data);
-      // setAnimeList(prevList => {
-      //   return [
-      //     ...prevList,
-      //     replyJson.data.data
-      //   ]
-      // })
-      setLastPage(replyJson.data.pagination.last_visible_page);
-      
-      // for(let i=0;i<replyJson.data.data.length -1;i++){
-      //   fullanimeList.push(replyJson.data.data[i]);
-      // }
-      // setFullAnimeList(prevList=>prevList)
-      console.log("animeList:", animeList);
-      const additionalDetailsEle = document.getElementById("Anime-div");
-      if (additionalDetailsEle != null) {
-        additionalDetailsEle.hidden = true;
-      }
+      setAnimeNextPage(prev=>prev+1);
     } catch (error) {
       setIsLoaded(true);
       setError(error);
@@ -86,22 +72,15 @@ function AnimeNewsSearch() {
 
   //override nextpage functionality to account for only 25 rows returned at a time
   function nextPageOverride() {
-    // if (!canNextPage) {
-    //   setAnimeNextPage((nextAnimePage) => nextAnimePage + 1);
-    //   doFetchAll();
-    // }
+    if (!canNextPage) {
+      setAnimeNextPage((nextAnimePage) => nextAnimePage + 1);
+      doFetchAll();
+    }
     nextPage();
-    // setPageTracker((setPageTracker) => setPageTracker + 1);
   }
 
   function previousPageOverride() {
-    // setAnimeNextPage((nextAnimePage) => nextAnimePage -1);
-    // if (!canPreviousPage) {
-    //   setAnimeNextPage((nextAnimePage) => nextAnimePage - 1);
-    //   doFetchAll();
-    // }
     previousPage();
-    // setPageTracker((setPageTracker) => setPageTracker - 1);
   }
 
     //set the column headers and data source
