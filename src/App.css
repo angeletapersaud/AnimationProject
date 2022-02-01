@@ -10,7 +10,7 @@
 .App {
     background: #936aa3;
     height: 70px;
-    width: 100vw;
+    width: 101vw;
 }
 
 #main-div {
@@ -75,7 +75,7 @@ input:hover {
 .section-top {
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 100vw;
+    width: 101vw;
     height: 100vh;
     background-image: url(./images/LandingPageImages/Studio-Ghibli.jpg);
     background-size: cover;

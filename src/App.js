@@ -10,7 +10,7 @@ import Connect from "./pages/Connect";
 import ThankYouPage from "./pages/ThankYouPage";
 import Overview from "./pages/Overview";
 import Login from "./pages/Login";
-import React, { useReducer} from "react";
+import React, { useReducer } from "react";
 
 export const UserContext = React.createContext();
 
