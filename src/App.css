@@ -517,17 +517,17 @@ input:hover {
     }
     /* Media Queries for about us page */
     #AboutUsTitle {
-        grid-column-start: 5;
-        grid-column-end: 11;
-        grid-row-start: 1;
-        grid-row-end: 1;
+        grid-column-start: 4;
+        grid-column-end: 12;
+        grid-row-start: 2;
+        grid-row-end: 2;
     }
     .AboutUsContainer {
         display: flex;
         flex-wrap: wrap;
         grid-column-start: 3;
         grid-column-end: 13;
-        grid-row-start: 3;
+        grid-row-start: 4;
         grid-row-end: 24;
     }
     /* Media Queries for Studio Ghibli page */

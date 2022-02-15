@@ -27,7 +27,7 @@ function AboutUs() {
               <img src={KikisDeliveryService} alt="" height="540" width="540" />
             </div>
             <div className="content">
-              <h2>Search Films</h2>
+              <h2>Search Animations</h2>
               <p>
                 {" "}
                 Whether you need a little refresher regarding a specific

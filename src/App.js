@@ -12,6 +12,7 @@ import Overview from "./pages/Overview";
 import Login from "./pages/Login";
 import React, { useReducer } from "react";
 
+//create context
 export const UserContext = React.createContext();
 
 //define reducer function to be consumed on child class
@@ -34,8 +35,11 @@ const reducer = (state, action) => {
 
 //define routes
 function App() {
+  //destructure useReducer hook
   const [{ user }, dispatch] = useReducer(reducer, { user: "Log in" });
   return (
+    //pass destructered object and method into Provider to be
+    //accessible globally
     <UserContext.Provider value={{ userState: user, userDispatch: dispatch }}>
       <div className="App">
         <div id="main-div">

@@ -19,6 +19,8 @@ function Login() {
   //handle logout by calling dispatch with action type Loggin In
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+
+    //consume useContext hook
     userContext.userDispatch({ type: "Logged In", usernameLogin });
     setUsernameLogin("");
     setPasswordLogin("");
@@ -28,6 +30,7 @@ function Login() {
 
   //handle logout by calling dispatch  with action type Logged Out
   function handleSubmitLogout() {
+    //consume useContext hook 
     userContext.userDispatch({ type: "Logged Out" });
     document.getElementById("signoutBtn").hidden = true;
   }

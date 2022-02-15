@@ -16,22 +16,16 @@ import id from "date-fns/esm/locale/id/index.js";
 function AnimeNewsSearch() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [animeList, setAnimeList] = useState([]);
-  const [fullanimeList, setFullAnimeList] = useState([]);
-  const [anime, setAnime] = useState([]);
+  let [animeList, setAnimeList] = useState([]);
+  let [currentPageIndex, setCurrentPageIndex] = useState(0);
   let [nextAnimePage, setAnimeNextPage] = useState(1);
-  const [nextAnimeLink, setAnimeLink] = useState([""]);
-  const [previousAnimeID, setpreviousAnimeID] = useState([]);
   const [queryValue, setQueryValue] = useState("");
-  let [lastPage, setLastPage] = useState(0);
-  let [PageTracker, setPageTracker] = useState(1);
+  let [canNextPageOverride, setCanNextPageOverride] = useState(true);
 
-
-  //console.clear();
     //useEffect will rerender the component everytime any state updates
   useEffect(() => {
     doFetchAll();
-  }, []);
+  },[]);
 
     //GET api to fetch the table data 
   async function doFetchAll() {
@@ -39,13 +33,16 @@ function AnimeNewsSearch() {
       console.log("https://api.jikan.moe/v4/anime?page=" + nextAnimePage);    
     let replyJson = await axios(
       "https://api.jikan.moe/v4/anime?page=" + nextAnimePage);
-      console.log("reply: ", replyJson);
       setIsLoaded(true);
-      setAnimeList(replyJson.data.data);
-      setAnimeNextPage(prev=>prev+1);
+      replyJson.data.data.forEach(element => {
+        setAnimeList(myArray => [...myArray,element ])
+      });
     } catch (error) {
       setIsLoaded(true);
       setError(error);
+    }
+    finally{
+      
     }
   }
 
@@ -56,8 +53,8 @@ function AnimeNewsSearch() {
       let replyJson = await axios(
         "https://api.jikan.moe/v4/anime?q=" + queryValue
       );
-      console.log("reply: ", replyJson);
       setIsLoaded(true);
+      setCurrentPageIndex(0);
       setAnimeList(replyJson.data.data);
     } catch (error) {
       setIsLoaded(true);
@@ -72,11 +69,23 @@ function AnimeNewsSearch() {
 
   //override nextpage functionality to account for only 25 rows returned at a time
   function nextPageOverride() {
-    if (!canNextPage) {
-      setAnimeNextPage((nextAnimePage) => nextAnimePage + 1);
-      doFetchAll();
+    if(queryValue === ''){
+      if((pageOptions.length - (pageIndex + 2)) < 3){
+        setAnimeNextPage(prev=>prev+1);
+        setCanNextPageOverride(false);
+        setTimeout(doFetchAll,5000);
+        setCanNextPageOverride(true);
+      }
+      setCurrentPageIndex(prev=> prev + 1)
     }
-    nextPage();
+
+    if(canNextPageOverride){
+      nextPage();
+    }
+    
+    
+    
+   
   }
 
   function previousPageOverride() {
@@ -110,6 +119,7 @@ function AnimeNewsSearch() {
       data,
       initialState: {
         hiddenColumns: ["mal_id"],
+        pageIndex: currentPageIndex
       },
     },
     useFilters,
@@ -179,21 +189,22 @@ function AnimeNewsSearch() {
             {"<<"}
           </button>{" "}
           <span>
-            {/* Page{" "} */}
+            Page{" "}
             <strong>
-              {/* {PageTracker} of {lastPage - pageOptions.length} */}
+              {pageIndex + 1} of {pageOptions.length}
             </strong>{" "}
           </span>
           <button
             id="AnimeTablePaginationPrev-button"
             onClick={() => previousPageOverride()}
-            // disabled={!canPreviousPage}
+             disabled={!canPreviousPage}
           >
             Previous
           </button>
           <button
             id="AnimeTablePaginationNext-button"
             onClick={() => nextPageOverride()}
+            disabled={!canNextPageOverride}
           >
             Next
           </button>
