@@ -10,7 +10,11 @@ import Connect from "./pages/Connect";
 import ThankYouPage from "./pages/ThankYouPage";
 import Overview from "./pages/Overview";
 import Login from "./pages/Login";
+import DeleteGhibliFilm from "./components/StudioGhibliFilm/DeleteGhibliFilm";
+import ViewGhibliFilm from "./components/StudioGhibliFilm/ViewGhibliFilm";
+import UpdateGhibliFilm from "./components/StudioGhibliFilm/UpdateGhibliFilm";
 import React, { useReducer } from "react";
+// import ProtectedRoutes from "./ProtectedRoutes";
 
 //create context
 export const UserContext = React.createContext();
@@ -48,6 +52,8 @@ function App() {
           <Router>
             <Sidebar />
             <Routes>
+              <Route path="login" exact element={<Login />} />
+              {/* <Route element = {<ProtectedRoutes/>}> */}
               <Route path="/" exact element={<Overview />} />
               <Route path="/AnimationProject" exact element={<Overview />} />
               <Route path="overview" exact element={<Overview />} />
@@ -74,7 +80,22 @@ function App() {
                 exact
                 element={<ThankYouPage />}
               />
-              <Route path="login" exact element={<Login />} />
+              <Route
+                path="/delete-ghibli/id:id"
+                exact
+                element={<DeleteGhibliFilm />}
+              />
+              <Route
+                path="/view-ghibli/id:id"
+                exact
+                element={<ViewGhibliFilm />}
+              />
+              <Route
+                path="/update-ghibli/id:id"
+                exact
+                element={<UpdateGhibliFilm />}
+              />
+              {/* </Route> */}
             </Routes>
           </Router>
         </div>

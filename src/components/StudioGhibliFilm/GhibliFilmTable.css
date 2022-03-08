@@ -5,6 +5,10 @@ table {
     text-align: center;
 }
 
+textarea {
+    height: auto;
+}
+
 table td,
 table th {
     border: 1px solid rgb(209, 207, 207);
@@ -29,10 +33,31 @@ tfoot td {
     color: white;
 }
 
+#ghibliSearch-div {
+    grid-column-start: 2;
+    grid-column-end: 20;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+
+#ghibliSearch-span {
+    font-size: 40px;
+    color: #9c69a3;
+}
+
+#ghibliSearch-input {
+    font-size: 30px;
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    color: #9c69a3;
+    padding: 1rem;
+}
+
 #StudioGhibliFilm-table {
     grid-column-start: 2;
-    grid-column-end: 22;
-    grid-row-start: 5;
+    grid-column-end: 20;
+    grid-row-start: 6;
     grid-row-end: 20;
 }
 
@@ -42,8 +67,9 @@ tfoot td {
 }
 
 #GhibliFilmGlobalFilter-inputTextBox {
-    font-size: 40px;
-    height: 60px;
+    font-size: 30px;
+    height: 50px;
+    width: 250px;
     border-radius: 10px;
     color: #9c69a3;
     padding: 1rem;
@@ -69,7 +95,7 @@ button,
 }
 
 #GhibliFilmGlobalFilter-span {
-    grid-column-start: 2;
+    grid-column-start: 8;
     grid-column-end: 13;
     grid-row-start: 3;
     grid-row-end: 3;
@@ -82,15 +108,134 @@ button,
     border-radius: 10px;
 }
 
-#StudioGhibliFilm-div {
-    position: fixed;
-    left: 4rem;
-    top: -0.5rem;
+#GhibliFilmGlobalFilter-inputTextBox {
+    font-size: 30px;
+    height: 47px;
+    border-radius: 10px;
+    color: #9c69a3;
+    padding: 1rem;
 }
 
-#ghibliFilm-title {
+#ghibliFilm-release-description,
+#ghibliFilm-release-date {
     position: relative;
-    right: 1rem;
+    margin-top: -34px;
+}
+
+#ghibliFilm-release-date {
+    margin-bottom: 20px;
+}
+
+#StudioGhibliFilm-div {
+    position: fixed;
+    left: -5rem;
+    top: -6rem;
+}
+
+#ghibliFilm-title,
+#ghibliFilm-director {
+    position: relative;
+    right: 4.8rem;
+    margin-bottom: -12px;
+}
+
+#ghibliFilm-movie-banner {
+    position: relative;
+    width: 350px;
+    left: 20px;
+    margin-top: 4px;
+}
+
+#ghibliFilm-div {
+    width: 390px;
+    text-align: center;
+}
+
+#add-ghibli-film-btn {
+    height: 2.3rem;
+    font-size: 1.2rem;
+    width: 4rem;
+}
+
+.gf {
+    display: flex;
+    position: relative;
+    top: 16rem;
+}
+
+#ghibli-title,
+#ghibli-director,
+#ghibli-moviePoster,
+#ghibli-releaseDate,
+#ghibli-Description,
+#ghibli-movieBanner {
+    height: 2.2rem;
+    margin: 2px;
+    font-size: 21px;
+    font-weight: bolder;
+    color: #9c69a3;
+    width: 7.8rem;
+    padding: 0.1rem;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#ghibli-releaseDate {
+    width: 3.45rem;
+    font-size: 1.7rem;
+    padding: 0.1rem;
+}
+
+.form-label-ghibli {
+    font-size: 1.3rem;
+    width: 12rem;
+    color: #9c69a3;
+}
+
+#AddedGhibli {
+    position: relative;
+    top: 3.5rem;
+    right: 40rem;
+    font-size: 40px;
+    color: #9c69a3;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 44.5rem;
+    top: 7.7rem;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #9c69a3;
+}
+
+.form-control {
+    font-size: 1.3rem;
+    width: 160px;
+    color: #9c69a3;
+    position: relative;
+}
+
+.text-center {
+    position: relative;
+    bottom: 26rem;
+    left: 32rem;
+    font-size: 1.8rem;
+    color: #9c69a3;
+    width: 700px;
+}
+
+.form-group-movie-poster {
+    position: relative;
+    top: 9rem;
+    left: 32rem;
+}
+
+.btn-confirm-delete {
+    width: 150px;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 1024px) {
@@ -100,7 +245,7 @@ button,
         width: 100%;
         grid-column-start: 1;
         grid-column-end: 7;
-        grid-row-start: 5;
+        grid-row-start: 6;
         grid-row-end: 20;
         text-align: center;
     }
@@ -113,27 +258,28 @@ button,
         color: #9c69a3;
     }
     #GhibliFilmGlobalFilter-span {
-        grid-column-start: 4;
+        grid-column-start: 1;
         grid-column-end: 15;
         grid-row-start: 3;
         grid-row-end: 3;
     }
     #ghibliFilm-container {
         position: relative;
-        left: 35rem;
-        top: 18rem;
+        left: 34rem;
+        top: 17.8rem;
     }
     #StudioGhibliFilm-div {
         position: fixed;
     }
     #ghibliFilm-div {
-        width: 300px;
+        width: 280px;
         text-align: center;
+        font-size: 18px;
     }
     #ghibliFilm-movie-banner {
-        width: 300px;
+        width: 255px;
         position: relative;
-        left: 0em;
+        left: 13px;
     }
     #ghibliFilm-title {
         position: relative;
@@ -142,5 +288,60 @@ button,
     #ghibliFilm-director {
         position: relative;
         right: 4rem;
+    }
+    #GhibliFilmGlobalFilter-inputTextBox {
+        position: relative;
+        left: 42rem;
+    }
+    #GhibliFilmTablePagination-div {
+        grid-column-start: 2;
+        grid-column-end: 15;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        font-size: 25px;
+    }
+    .gf {
+        position: relative;
+        top: 14rem;
+        right: 3rem;
+    }
+    #StudioGhibliFilm-div {
+        position: fixed;
+        left: 11.4rem;
+        top: -0.4rem;
+    }
+    #ghibliFilm-release-date {
+        margin-bottom: 23px;
+    }
+    #ghibli-title,
+    #ghibli-director,
+    #ghibli-moviePoster,
+    #ghibli-releaseDate,
+    #ghibli-Description,
+    #ghibli-movieBanner {
+        height: 2.2rem;
+        margin: 2px;
+        font-size: 25px;
+        width: 4.4rem;
+        padding: 0.1rem;
+    }
+    #add-ghibli-film-btn {
+        height: 2.3rem;
+        font-size: 1.2rem;
+        width: 4rem;
+        /* position: relative;
+        right: 1rem; */
+    }
+    .form-group {
+        left: 22rem;
+    }
+    .form-group-movie-poster {
+        left: 9rem;
+    }
+    .btn-confirm-delete {
+        left: 21.4rem;
+    }
+    .text-center {
+        left: 10rem;
     }
 }

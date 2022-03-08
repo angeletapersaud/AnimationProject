@@ -27,12 +27,47 @@
     font-weight: bold;
 }
 
+#loadingDiv {
+    grid-column-start: 13;
+    grid-column-end: 24;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    font-size: 30px;
+    color: white;
+    animation-name: loading;
+    animation-duration: 2s;
+    background-color: #936aa3;
+    height: 40px;
+    width: 15%;
+}
+
+@keyframes loading {
+    15% {
+        /* transform: rotate(0deg); */
+        width: 15%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        /* transform: rotate(360deg); */
+        width: 100%;
+    }
+}
+
 button {
     transition: transform 0.5s;
 }
 
 button:hover {
     transform: scale(1.1);
+}
+
+button:active {
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
 }
 
 tr {
@@ -66,7 +101,7 @@ input:hover {
 #Project-title {
     color: white;
     font-size: 60px;
-    grid-column-start: 13;
+    grid-column-start: 12;
     grid-column-end: 24;
     grid-row-start: 1;
     grid-row-end: 1;
@@ -363,6 +398,14 @@ input:hover {
     font-size: 22px;
     flex-direction: column;
     display: block;
+    top: 2rem;
+    padding: 5px;
+    left: 6rem;
+    border-radius: 10px;
+}
+
+.form-label-ghibli {
+    font-size: 22px;
     top: 2rem;
     padding: 5px;
     left: 6rem;

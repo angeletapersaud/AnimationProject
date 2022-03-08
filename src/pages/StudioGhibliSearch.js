@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import GhibliService from '../services/GhibliService';
 import {
   useTable,
   useSortBy,
@@ -7,10 +8,11 @@ import {
   usePagination,
 } from "react-table";
 import { COLUMNS } from "../components/StudioGhibliFilm/GhibliFilmColumns";
-import axios from "axios";
+//import axios from "axios";
 import StudioGhibliFilm from "../components/StudioGhibliFilm/StudioGhibliFilm";
 import "../components/StudioGhibliFilm/GhibliFilmTable.css";
 import GhibliFilmGlobalFilter from "../components/StudioGhibliFilm/GhibliFilmGlobalFilter";
+import CreateNewGhibliFilm from "../components/StudioGhibliFilm/CreateNewGhibliFilm";
 
 const StudioGhibliSearch = () => {
   const [error, setError] = useState(null);
@@ -18,16 +20,37 @@ const StudioGhibliSearch = () => {
   const [ghibliFilmList, setghibliFilmList] = useState([]);
   const [ghibliFilm, setghibliFilm] = useState([]);
   const [previousAnimeID, setpreviousAnimeID] = useState([]);
+  const [queryValue, setQueryValue] = useState("");
 
   //useEffect will rerender the component everytime any state updates
   useEffect(() => {
     doFetchAll();
   }, []);
 
+     //GET api to query for all data containing search input 
+     async function doFetchAllbyName(event) {
+      try {
+        event.preventDefault();
+        let replyJson = await GhibliService.getAllGhiblisByName(queryValue);
+        setIsLoaded(true);
+        setghibliFilmList(replyJson.data);
+      } catch (error) {
+        setIsLoaded(true);
+        setError(error);
+      }
+    }
+  
+    //tracks any changes in search box and updates QueryValue to be used on submission with api call
+    const handleChange = (e) => {
+      setQueryValue(e.target.value);
+    };
+
   //GET api to fetch the table data 
   async function doFetchAll() {
     try {
-      let replyJson = await axios("https://ghibliapi.herokuapp.com/films/");
+      //let replyJson = await axios("https://ghibliapi.herokuapp.com/films/");
+      //let replyJson = await axios("http://localhost:8081/api/allghibli");
+      let replyJson = await GhibliService.getAllGhiblis();
       setIsLoaded(true);
       setghibliFilmList(replyJson.data);
       const additionalDetailsEle = document.getElementById(
@@ -111,14 +134,23 @@ const StudioGhibliSearch = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div id='loadingDiv'>Loading...</div>;
   } else {
     return (
       <>
+      <div id="ghibliSearch-div">
+          <form onSubmit={doFetchAllbyName} className="cf">
+            <span id="ghibliSearch-span">
+              <input id="ghibliSearch-input" onChange={handleChange} placeholder = "Search Ghibli Film" />
+              <button id="ghibliSearchBtn">Search</button>
+            </span>
+          </form>
+        </div>
         <GhibliFilmGlobalFilter
           filter={globalFilter}
           setFilter={setGlobalFilter}
         />
+        <CreateNewGhibliFilm setghibliFilmList = {setghibliFilmList} doFetchAll = {doFetchAll}/>
         <table {...getTableProps()} id="StudioGhibliFilm-table">
           <thead>
             {headerGroups.map((headerGroup) => (

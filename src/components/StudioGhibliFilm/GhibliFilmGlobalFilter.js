@@ -4,11 +4,12 @@ import React from "react";
 const GhibliFilmGlobalFilter = ({ filter, setFilter }) => {
   return (
     <span id="GhibliFilmGlobalFilter-span">
-      Filter:{" "}
+      {/* Filter:{" "} */}
       <input
         id="GhibliFilmGlobalFilter-inputTextBox"
         value={filter || ""}
         onChange={(e) => setFilter(e.target.value)}
+        placeholder = "Filter Ghibli Table"
       />
     </span>
   );

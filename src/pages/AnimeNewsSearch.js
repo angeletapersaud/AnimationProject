@@ -15,7 +15,7 @@ import id from "date-fns/esm/locale/id/index.js";
 
 function AnimeNewsSearch() {
   const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  let [isLoaded, setIsLoaded] = useState(false);
   let [animeList, setAnimeList] = useState([]);
   let [currentPageIndex, setCurrentPageIndex] = useState(0);
   let [nextAnimePage, setAnimeNextPage] = useState(1);
@@ -29,8 +29,7 @@ function AnimeNewsSearch() {
 
     //GET api to fetch the table data 
   async function doFetchAll() {
-    try {
-      console.log("https://api.jikan.moe/v4/anime?page=" + nextAnimePage);    
+    try { 
     let replyJson = await axios(
       "https://api.jikan.moe/v4/anime?page=" + nextAnimePage);
       setIsLoaded(true);
@@ -68,27 +67,52 @@ function AnimeNewsSearch() {
   };
 
   //override nextpage functionality to account for only 25 rows returned at a time
-  function nextPageOverride() {
-    if(queryValue === ''){
-      if((pageOptions.length - (pageIndex + 2)) < 3){
+  async function nextPageOverride(event) {
+    try{
+      
+    if(queryValue === ''){//|| (pageOptions.length - (pageIndex + 2)) < 3 
+      if(!canNextPage){
+        if(isLoaded)setIsLoaded(false);
+        else setIsLoaded(true);
         setAnimeNextPage(prev=>prev+1);
         setCanNextPageOverride(false);
-        setTimeout(doFetchAll,5000);
+        //setTimeout(doFetchAll,5000);
+        doFetchAll();
         setCanNextPageOverride(true);
+        
       }
-      setCurrentPageIndex(prev=> prev + 1)
+      
     }
-
+    // else{
+    //   if(!canNextPage){
+    //     if(isLoaded)setIsLoaded(false);
+    //     else setIsLoaded(true);
+    //     setAnimeNextPage(prev=>prev+1);
+    //     setCanNextPageOverride(false);
+    //     //setTimeout(doFetchAllbyName,5000);
+    //     setAnimeList([]);
+    //     doFetchAllbyName();
+    //     setCanNextPageOverride(true);
+        
+    //   }
+    // }
+    setCurrentPageIndex(prev=> prev + 1)
     if(canNextPageOverride){
       nextPage();
     }
     
+  }
+  catch (error) {
+    setIsLoaded(true);
+    setError(error);
+  }
     
     
    
   }
 
-  function previousPageOverride() {
+  async function previousPageOverride() {
+    setCurrentPageIndex(prev=> prev - 1)
     previousPage();
   }
 
@@ -132,7 +156,7 @@ function AnimeNewsSearch() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div id='loadingDiv'>Loading...</div>;
   } else {
     return (
       <>
